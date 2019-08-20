@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
-import { Category } from './components/Category'
+import { ListOfCategories } from './components/ListOfCategories'
+import { GlobalStyle } from './styles/GlobalStyle'
+import { ListOfPhotoCards } from './components/ListOfPhotoCards'
+import { Logo } from './components/Logo'
 export default class App extends Component {
   render () {
     return (
-      <Category />
+      <>
+        <Logo />
+        <GlobalStyle />
+        <ListOfCategories />
+        <ListOfPhotoCards />
+      </>
     )
   }
 }
