@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
+import { Loading } from '../Loading'
 
 const useCategoriesData = () => {
   const [categories, setCategories] = useState([])
@@ -30,11 +31,11 @@ export const ListOfCategories = () => {
   const renderList = (fixed) => (
     <List fixed={fixed}>
       {
-        loading ? 'loading' : categories.map(category => (<Item key={category.id}><Category {...category} /></Item>))
+        loading ? <Loading /> : categories.map(category => (<Item key={category.id}><Category {...category} /></Item>))
       }
     </List>
   )
-  if (loading) return ('Loading')
+  if (loading) return (<Loading color='#BBB' />)
   return (
     <>
       {renderList()}

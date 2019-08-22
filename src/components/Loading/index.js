@@ -1,7 +1,8 @@
 import React from 'react'
+import { Spinner, SpinnerContainer } from './styles'
 
-export const Loading = () => {
+export const Loading = (props) => {
   return (
-    <div />
+    <SpinnerContainer><Spinner color={props.color} /></SpinnerContainer>
   )
 }
