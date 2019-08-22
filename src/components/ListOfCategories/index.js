@@ -35,7 +35,7 @@ export const ListOfCategories = () => {
       }
     </List>
   )
-  if (loading) return (<Loading color='#BBB' />)
+  if (loading) return (<Loading />)
   return (
     <>
       {renderList()}

@@ -39,4 +39,5 @@ export const SpinnerContainer = styled.div`
   height: 60px;
   -webkit-transform: translate(-30px, -30px) scale(0.3) translate(30px, 30px);
   transform: translate(-30px, -30px) scale(0.3) translate(30px, 30px);
+  margin: auto;
 `

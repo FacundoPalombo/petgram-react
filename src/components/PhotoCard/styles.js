@@ -31,6 +31,7 @@ export const Button = styled.button`
   }
 `
 export const Container = styled.article`
+  min-height: 200px;
   width: 100%;
   margin-bottom: 10px;
 `
