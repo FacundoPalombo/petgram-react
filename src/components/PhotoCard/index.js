@@ -1,21 +1,24 @@
-import React, { useRef, useEffect, useState, Fragment } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Button, Image, ImgWrapper, Container } from './styles'
 import { MdFavoriteBorder } from 'react-icons/md/'
+import { FaDog, FaCat } from 'react-icons/fa/'
 
-const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-
-export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
+export const PhotoCard = ({ id, likes = 0, src }) => {
+  const loading = true
   const [show, setShow] = useState(false)
   const ref = useRef(null)
   useEffect(() => {
-    const observer = new window.IntersectionObserver((entries) => {
-      const { isIntersecting } = entries[0]
-      if (isIntersecting) {
-        setShow(true)
-        observer.disconnect()
-      }
+    Promise.resolve(typeof window.IntersectionObserver !== 'undefined' ? window.IntersectionObserver
+      : import('intersection-observer')).then(() => {
+      const observer = new window.IntersectionObserver((entries) => {
+        const { isIntersecting } = entries[0]
+        if (isIntersecting) {
+          setShow(true)
+          observer.disconnect()
+        }
+      })
+      observer.observe(ref.current)
     })
-    observer.observe(ref.current)
   }, [ref])
   return (
     <Container ref={ref}>
@@ -24,7 +27,9 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
           <>
             <a href={`/detail/${id}`}>
               <ImgWrapper>
-                <Image src={src} />
+                {
+                  loading ? (Math.random() * 10 < 5 ? (<FaCat size='300px' color='#BBB' />) : (<FaDog size='300px' color='#BBB' />)) : (<Image src={src} />)
+                }
               </ImgWrapper>
             </a>
             <Button>
