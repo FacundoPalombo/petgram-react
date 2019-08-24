@@ -5,7 +5,7 @@ export const ListOfPhotoCards = () => {
   return (
     <List>
       {
-        [1, 2, 3, 4, 5, 6, 7].map(pc => <PhotoCard key={pc} />)
+        [1, 2, 3, 4, 5, 6, 7].map(pc => <PhotoCard key={pc} order={pc} id={pc} />)
       }
     </List>
   )
