@@ -23,15 +23,6 @@ box-shadow: 010px 14px rgba(0, 0, 0, .2);
   width: 100%;
 `
 
-export const Button = styled.button`
-  display: flex; 
-  align-items: center;
-  padding-top: 8px;    
-  & svg {
-      margin-right: 4px;
-
-  }
-`
 export const Container = styled.article`
   box-shadow: 0 0 5px rgba(0,0,0,.1);
   border-radius: 2%;
