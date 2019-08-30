@@ -6,7 +6,7 @@ export const ListOfPhotoCardsComponent = ({ data: { photos = [] }, categoryId } 
   return (
     <List>
       {
-        photos.map(pc => <PhotoCard key={pc.id} src={pc.src} order={pc.categoryId} id={pc.id} />)
+        photos.map(pc => <PhotoCard key={pc.id} src={pc.src} order={pc.categoryId} id={pc.id} likes={pc.likes} />)
       }
     </List>
   )
