@@ -1,33 +1,30 @@
 import React from 'react'
 import { PhotoCard } from '../components/PhotoCard'
-import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
+import { Pet } from '../components/Pet'
+import { GET_SINGLE_PHOTO } from '../gql/queries/photos'
 
-
-const query = gql`
-query getSinglePhoto($id: ID!) {
-    photo(id: $id) {
-      id
-      categoryId
-      src
-      likes
-      userId
-      liked
-    }
-  }
-`
-export const PhotoCardWithQuery = ({ id, categoryId }) => {
+const renderProp = ({ loading, error, data }, categoryId) => {
+  const { photo = {} } = data
   return (
-    <Query query={query} variables={{ id, categoryId }}>
+    <>
       {
-        ({ loading, error, data }) => {
-          const { photo = {} } = data
-          <Pet size='300px' category={categoryId} />
-          return (
+        loading
+          ? (
+            <Pet category={categoryId} />
+          )
+          : (
             <PhotoCard {...photo} />
           )
-        }
       }
+    </>
+  )
+}
+
+export const PhotoCardWithQuery = ({ id, categoryId }) => {
+  return (
+    <Query query={GET_SINGLE_PHOTO} variables={{ id, categoryId }}>
+      {renderProp}
     </Query>
   )
 }

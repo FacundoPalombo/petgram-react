@@ -2,20 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
 import { Loading } from '../Loading'
-
-const useCategoriesData = () => {
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    window.fetch('https://petgram-server-fpalombo-d94ty634r.now.sh/categories')
-      .then(res => res.json())
-      .then(response => { setCategories(response); setLoading(false) })
-  }, [])
-
-  return { categories, loading }
-}
+import { useCategoriesData } from '../../hooks/useCategoriesData.js'
 
 export const ListOfCategories = () => {
   const { categories, loading } = useCategoriesData()
