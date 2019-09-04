@@ -4,6 +4,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { FavButton } from '../FavButton'
 import { ToggleLikeMutation } from '../../container/ToggleLikeMutation'
+import { Link } from '@reach/router'
 
 export const PhotoCard = ({ id, likes = 0, src, order }) => {
   const key = `like-${id}`
@@ -15,11 +16,11 @@ export const PhotoCard = ({ id, likes = 0, src, order }) => {
       {
         show && (
           <>
-            <a href={`/?detail=${id}`}>
+            <Link to={`/detail/${id}`}>
               <ImgWrapper>
                 {show && (<Image src={src} />)}
               </ImgWrapper>
-            </a>
+            </Link>
           </>
         )
       }
