@@ -9,7 +9,7 @@ export const H2 = styled.h2`
   margin-block-start: 0;
   margin: 0;
   padding: 0;
-  background: linear-gradient(20deg, rgba(247,119,55,1) 0%, rgba(247,119,55,.7) 40%, rgba(255,220,128,.6) 100%);
+  background: ${props => props.gradient ? props.gradient : ('linear-gradient(20deg, rgba(247,119,55,1) 0%, rgba(247,119,55,.7) 40%, rgba(255,220,128,.6) 100%)')};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 10px rgba(0,0,0,.2);
