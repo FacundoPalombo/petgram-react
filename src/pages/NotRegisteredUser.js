@@ -3,7 +3,6 @@ import { Context } from '../Context'
 import { UserForm } from '../components/UserForm'
 import { RegisterMutation } from '../container/RegisterMutation'
 import { LoginMutation } from '../container/LoginMutation'
-import { sign } from 'crypto'
 
 export const NotRegisteredUser = () => {
   const { activateAuth } = useContext(Context)
