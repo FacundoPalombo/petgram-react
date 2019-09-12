@@ -14,6 +14,7 @@ export const ListOfCategories = () => {
       showFixed !== newShowFixed && setShowFixed(newShowFixed)
     }
     document.addEventListener('scroll', onScroll)
+    return () => document.removeEventListener('scroll', onScroll)
   })
   const renderList = (fixed) => (
     <List fixed={fixed}>

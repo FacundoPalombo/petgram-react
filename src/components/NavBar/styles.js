@@ -5,6 +5,7 @@ export const Nav = styled.nav`
   position: fixed;
   bottom: 0px;
   width: 100%;
+  max-width: 500px;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;

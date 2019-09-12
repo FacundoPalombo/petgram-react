@@ -3,6 +3,7 @@ import { Context } from '../Context'
 import { UserForm } from '../components/UserForm'
 import { RegisterMutation } from '../container/RegisterMutation'
 import { LoginMutation } from '../container/LoginMutation'
+import { sign } from 'crypto'
 
 export const NotRegisteredUser = () => {
   const { activateAuth } = useContext(Context)
@@ -33,8 +34,8 @@ export const NotRegisteredUser = () => {
               const variables = { input }
               login({ variables })
                 .then(({ data }) => {
-                  const { login } = data
-                  activateAuth(login)
+                  const { signup } = data
+                  activateAuth(signup)
                 })
             }
             const errorMsg = error && 'Usuario o contraseña incorrectas...'
