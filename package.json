@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server --history-api-fallback",
     "lint": "standard",
     "lint:fix": "standard --fix",
-    "serve:dev": "npx serve dist -s --open"
+    "serve:dev": "npx serve dist -s"
   },
   "author": "Facundo Palombo",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "debug": "^4.1.1",
     "eslint-plugin-standard": "^4.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.7.2",
     "standard": "^14.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",

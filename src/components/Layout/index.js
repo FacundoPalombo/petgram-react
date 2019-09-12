@@ -1,6 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Title } from '../Title'
+import PropTypes from 'prop-types'
+
 export const Layout = ({ children, title, subtitle, useTitle = [false, false] }) => {
   return (
     <>
@@ -14,3 +16,15 @@ export const Layout = ({ children, title, subtitle, useTitle = [false, false] })
     </>
   )
 }
+
+const LayoutPropTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  useTitle: PropTypes.arrayOf(
+    PropTypes.bool,
+    PropTypes.bool
+  )
+}
+
+Layout.PropTypes = LayoutPropTypes
