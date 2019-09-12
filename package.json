@@ -28,7 +28,9 @@
     "standard": "^14.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-pwa-manifest": "^4.0.0",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",

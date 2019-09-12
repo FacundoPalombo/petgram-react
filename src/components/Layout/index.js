@@ -27,4 +27,4 @@ const LayoutPropTypes = {
   )
 }
 
-Layout.PropTypes = LayoutPropTypes
+Layout.propTypes = LayoutPropTypes

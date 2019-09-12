@@ -40,7 +40,7 @@ export const PhotoCard = ({ id, liked, likes, src, order }) => {
 }
 
 export const PhotoCardPropTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   liked: PropTypes.bool,
   src: PropTypes.string,
   order: PropTypes.number,
@@ -51,4 +51,4 @@ export const PhotoCardPropTypes = {
   }
 }
 
-PhotoCard.PropTypes = PhotoCardPropTypes
+PhotoCard.propTypes = PhotoCardPropTypes

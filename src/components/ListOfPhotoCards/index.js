@@ -13,7 +13,7 @@ export const ListOfPhotoCardsComponent = ({ data: { photos = [] }, categoryId } 
   )
 }
 
-ListOfPhotoCardsComponent.PropTypes = {
+ListOfPhotoCardsComponent.propTypes = {
   photos: PropTypes.arrayOf(
     PropTypes.shape(PhotoCardPropTypes)
   ),
